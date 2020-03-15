@@ -1,0 +1,15 @@
+
+
+app: filecnt.o filedisp.o
+	g++-8 -std=c++17 filecnt.cc -o filecnt.exe -lstdc++fs
+	g++-8 -std=c++17 filedisp.cc version.cpp -o filedisp.exe -lstdc++fs
+filecnt.o: filecnt.cc
+	g++-8 -std=c++17 filecnt.cc -c -lstdc++fs
+filedisp.o: filedisp.cc
+	g++-8 -std=c++17 filedisp.cc -c -lstdc++fs
+version.o: version.cpp
+	g++ -c version.cpp version.h
+cleanall:
+	rm *.o
+	rm *.exe
+
